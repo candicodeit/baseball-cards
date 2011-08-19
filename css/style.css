@@ -1,0 +1,163 @@
+/*-------------------------------------------
+!Reset Styles
+-------------------------------------------*/
+* { margin: 0; padding: 0; }
+
+/* HTML5 */
+article, aside, canvas, details, embed, figcaption, 
+figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+command, datalist, keygen, mark, meter, progress, rp, rt, ruby, time, wbr { display: inline; }
+
+/* self clearing float */
+.group:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/*-------------------------------------------
+Global Styles
+-------------------------------------------*/
+
+body { 
+	color: #efe6e1; 
+	background-color: #56211a; 
+	font-family: 'Gill Sans', sans-serif;
+	font-size: 1em; 
+	line-height: 1.2em; 
+}
+header.head { margin-bottom: -5px; overflow: hidden; }
+h1 { font-family: 'Bevan', 'Baskerville Bold', serif; font-weight: normal; }
+h2 { font-family: 'Josefin Sans', 'GeezaPro', serif; }
+h1, h2 { line-height: 1.3em; }
+p { padding: 10px 15px; }
+
+/* Main Content */
+.main-content, .main-content article { color: #421c11; background-color: #efdec1; }
+.main-content header { background: url('../imgs/bg_texture_noise.jpg') repeat-x ; height: 80px; color: #efe6e1; }
+.main-content header hgroup, .baseball-history .main-content header h1 { padding-top: 5px;  margin-left: 15px; }
+.main-content article, .main-content article span, .parks nav ul, .cards nav ul { display: none; }
+.author-rtinfo { width: 200px; float: right; text-align: right; text-transform: uppercase; }
+
+nav.nav { background: url('../imgs/bg_texture_crosshatch.jpg') repeat; display: block; }
+nav.half { position: relative; }
+nav.half .prev, nav.half .next { position: absolute; }
+nav.half .prev { -webkit-transform: rotate(180deg); }
+
+nav.half ul, nav.half ul li { list-style: none; }
+
+/* Footer */
+.footer { background: url('../imgs/nav_bg_1024.jpg') no-repeat; height: 44px; clear: both; }
+
+/*-------------------------------------------
+Specific Page Styles
+-------------------------------------------*/
+
+/* ----- index.html ----- */
+.home header.head { background: url('../imgs/bg_bb_cards.jpg') no-repeat; height: 400px; position: relative; margin-bottom: 0; }
+.home header a.see-all img { position: absolute; top: 0; right: 0; }
+.home header h1 { margin: 15px 0 0 15px; }
+.home .main-content { padding: 5px; line-height: 1.3em; }
+
+.home-nav { border-top: 10px solid #EFDEC1; clear: both; }
+.home-nav a { width: 246px; height: 282px; display: block; float: left; text-indent: -9999px; margin: 0 5px; }
+.home-nav a.card-history { background: url('../imgs/btn_card_history.png') no-repeat; }
+.home-nav a.the-league { background: url('../imgs/btn_the_league.png') no-repeat; }
+.home-nav a.ballparks { background: url('../imgs/btn_old_ballparks.png') no-repeat; }
+
+/* ----- league.html & history.html ----- */
+.league .main-content header hgroup, 
+.baseball-history .main-content header h1 { width: 450px; float: left; }
+
+.league .main-content div, .baseball-history .main-content div { padding: 20px; font-size: 1.5em; line-height: 1.3em; }
+
+/* ----- parks.html ----- */
+.parks .main-content header { margin-bottom: 0; height: 90px; }
+.parks .main-content article { height: 315px; float: left; }
+.parks hgroup h1 { padding-top: 5px; }
+.parks hgroup.shibe h1.name-title span { font-size: .55em; }
+.parks article dl { margin: 0 15px; }
+.parks article dd { margin-bottom: 5px; }
+
+.parks ul { width: 300px; margin: 10px auto 0; }
+.parks ul li { width: 100px; float: left; }
+.parks ul li img { margin: 5px 7px; }
+
+.parks nav .prev { top: 120px; left: 5px; }
+.parks nav .next { top: 119px; right: 5px; }
+
+/* ----- cards.html ----- */
+.cards aside, .cards .card-nav { height: 650px; }
+.cards aside { background-color: #56211a; position: relative; }
+.cards aside img.card { width: 300px; height: 550px; margin: 40px 45px; position: absolute; z-index: 15; }
+.cards aside img.back { z-index: 0; }
+.cards aside a.flip { position: absolute; bottom: 20px; left: 10px; z-index: 20; }
+
+.cards .main-content { height: 255px; clear: both; }
+.cards nav ul { width: 240px; height: 580px; margin: 30px 0 0 70px; }
+.cards nav ul li { width: 120px; float: left; }
+.cards nav ul li img { margin: 15px 20px; }
+
+.cards nav .prev { left: 7px; top: 290px; }
+.cards nav .next { right: 5px; top: 291px; }
+
+/*-------------------------------------------
+!Media Queries
+-------------------------------------------*/
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-width : 769px) 
+and (max-width : 1024px) 
+and (orientation : landscape) {
+	
+	body, .flex { width: 1024px; }
+	
+	.home .head { width: 600px; float: left; }
+	.home .head .see-all { float: right; }
+	.home .split { width: 414px; float: left; }
+	.home header.split { clear: right; }
+	.home .split h1 img { width: 400px; }
+	.home .main-content { height: 306px; font-size: 1.2em; line-height: 1.5em; }
+	.home .home-nav a { margin: 0 45px; }
+	
+	.parks .head { height: 275px; }
+	.parks .head img { width: 1024px; height: 270px; }
+	.parks .main-content header, .parks .main-content article { width: 600px; float: left; }
+	.parks .main-content header { height: 90px; }
+	.parks .main-content article { height: 286px; clear: left; font-size: 1.2em; }
+	.parks nav.half { width: 424px; height: 376px; float: left; margin-top: -90px; z-index: 0; }
+	.parks ul { margin: 25px auto 0; }
+	.parks ul li img { margin: 10px; }
+	.parks nav .prev { top: 150px; left: 20px; }
+	.parks nav .next { top: 151px; right: 15px; }
+	
+	.cards aside, .cards .card-nav { float: left; }
+	.cards aside { width: 420px; height: 650px; clear: left; }
+	.cards aside img.card { margin: 45px 0 0 60px; }
+	.cards .card-nav { width: 604px; height: 300px; }
+	.cards nav ul { width: 500px; height: 195px; margin: 55px 0 0 55px; }
+	.cards nav ul li { width: 100px; }
+	.cards nav ul li img { margin: 5px; }
+	.cards nav .prev { top: 120px; }
+	.cards nav .next { top: 119px; }
+	.cards .main-content { width: 604px; height: 300px; float: left; clear: none; }
+	.cards .main-content article { height: 270px; font-size: 1.2em; line-height: 1.3em; }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (max-width : 768px) 
+and (orientation : portrait) {
+
+	body, .flex { width: 768px; }
+	.half { width: 384px; float: left; }
+	
+	.home .main-content { height: 110px; }
+		
+	.parks .head img { width: 768px; height: 500px; }
+	.parks .main-content article { width: 384px; }
+	.parks .park-nav { height: 315px; }
+}
